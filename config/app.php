@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel-jetsteam-blog'),
+    'name' => env('APP_NAME', 'Laravel-blog-news'),
 
     /*
     |--------------------------------------------------------------------------
