@@ -1,5 +1,5 @@
 <a href="/">
     <div class="text-gray-800 font-semibold">
-        <span class="text-yellow-500 text-3xl">&lt;Blog&gt;</span> News
+        <span class="text-yellow-500 text-3xl">&lt;Alexsers&gt;</span> Blog
     </div>
 </a>
