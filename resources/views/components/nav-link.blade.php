@@ -6,6 +6,6 @@
     'inline-flex items-center items-center hover:text-yellow-900 text-sm text-grey-500';
 @endphp
 
-<a {{ $attributes->merge(['class' => $classes]) }}>
+<a wire:navigate {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </a>
