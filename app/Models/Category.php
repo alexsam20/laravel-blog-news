@@ -12,7 +12,7 @@ class Category extends Model
     protected $fillable = [
         'title',
         'slug',
-        'txt_color',
+        'text_color',
         'bg_color',
     ];
 
