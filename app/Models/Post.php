@@ -67,7 +67,7 @@ class Post extends Model
         return ($times < 1) ? 1 : $times;
     }
 
-    public function getThumbnailImage()
+    public function getThumbnailUrl()
     {
         $isUrl = str_contains($this->image, 'http');
 
