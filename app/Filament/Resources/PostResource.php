@@ -42,7 +42,7 @@ class PostResource extends Resource
                     Forms\Components\DateTimePicker::make('published_at')->nullable(),
                     Forms\Components\Toggle::make('featured')->required(),
                     //Forms\Components\Checkbox::make('featured'),
-                    Forms\Components\Select::make('author')
+                    Forms\Components\Select::make('user_id')
                         ->relationship('author', 'name')
                         ->searchable()
                         ->required(),
