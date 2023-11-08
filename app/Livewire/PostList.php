@@ -42,18 +42,7 @@ class PostList extends Component
         $this->resetPage();
     }
 
-    #[Computed]
-    public function posts()
-    {
-        //return Post::published()->orderBy('published_at', 'desc')->SimplePaginate(3);
-        return Post::published()
-            ->orderBy('published_at', $this->sort)
-            ->when($this->activeCategory, function($query){
-                $query->withCategory($this->category);
-            })
-            ->where('title', 'like', "%{$this->search}%")
-            ->paginate(3);
-    }
+
 
     #[Computed]
     public function activeCategory()
