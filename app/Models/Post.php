@@ -65,6 +65,18 @@ class Post extends Model
         $query->where('featured', true);
     }
 
+    public function scopePopular($query)
+    {
+        // Like count. Order by like count
+        $query->withCount('likes')
+              ->orderBy("likes_count", 'desc');
+    }
+
+    public function scopeSearch($query, $search = '')
+    {
+        $query->where('title', 'like', "%{$search}%");
+    }
+
     public function getExcerpt()
     {
         return Str::limit(strip_tags($this->body), 150);
