@@ -50,6 +50,7 @@ class PostList extends Component
     {
         //return Post::published()->orderBy('published_at', 'desc')->SimplePaginate(3);
         return Post::published()
+            ->with('author', 'categories')
             ->when($this->activeCategory, function($query){
                 $query->withCategory($this->category);
             })
@@ -64,7 +65,10 @@ class PostList extends Component
     #[Computed]
     public function activeCategory()
     {
-        return Category::where('slug', $this->category)->first();
+//        if ($this->category === null || $this->category = '') {
+//            return null;
+//        }
+        return Category::where('slug', $this->category)->first() ?? false;
     }
 
     public function render()
